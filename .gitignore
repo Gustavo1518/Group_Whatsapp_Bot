@@ -1,0 +1,12 @@
+node_modules/
+
+.env
+
+pruebas.js
+
+pruebas2.js
+
+secret.js
+
+.wwebjs_auth/
+.wwebjs_cache/
