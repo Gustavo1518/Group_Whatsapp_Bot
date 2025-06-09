@@ -42,7 +42,7 @@ client.on('message', async message => {
   if (message.from.endsWith("@g.us")) {
     const nameGroup = await message.getChat()
     console.log(nameGroup)
-    if (nameGroup.name === "Test") {
+    if (nameGroup.name === "Test1") {
       const prohibir = palabras.some(palabra => message.body.toLowerCase().trim().includes(palabra))
       if (prohibir) {
         try {
