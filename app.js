@@ -58,10 +58,12 @@ client.on('message', async message => {
         }
       }
       switch (message.body.toLowerCase().trim()) {
-          case "cancelar":
-              await client.sendMessage(message.from, "👋 Gracias por tu visita\nSi tienes más dudas, escribe cuando gustes.\n¡Que tengas un excelente día! ☀️");
+          case "QUEJAS y EMERGENCIAS 🚨🚨🚨":
+              await client.sendMessage(message.from, `1. RECEPCIÓN DE LA EMERGENCIA\nMediante el chat de ‘QUEJAS Y EMERGENCIAS’ captura la información de forma clara e inmediata.\n¿Qué debes hacer?\n1. Mantén la calma\n2. Solicita y registra los siguientes datos en este chat:\no Tipo de accidente (caída, descarga eléctrica, otro):\no Nombre del bee accidentado:\no Ubicación exacta (dirección completa y referencias):\no Estado del bee (consciente/inconsciente, signos visibles):\no Número de servicio en el que se encuentra el bee (en caso de que haya sido en el domicilio de un cliente):\no Nombre de quién te reportó la emergencia:\no Número telefónico de quién te reportó la emergencia:\no Adjunta una fotografía del accidente reportado:\n¡Gracias! En este momento concluye tu acción con el reporte. Por favor mantente al pendiente de este grupo y número telefónico por cualquier duda que surja en el seguimiento del caso.`);
+              await client.sendMessage(message.from, `2. ACTIVACIÓN DEL PROTOCOLO INTERNO\nMiguel Huitrón, Gisel Arellano ó Elena Urrutia continúan con el seguimiento y protocolo interno (ÚNICOS AUTORIZADOS PARA LLEVAR A CABO EL PROCESO) y evalúan el accidente que se reporta y toman acción de los siguientes pasos:\n• Urgencia: El bee está consciente, es un daño menor y puede desplazarse a una clínica del IMSS para atención inmediata o al término de ruta. Ejemplo: Cortaduras poco profundas.\n• Emergencia: Cualquier riesgo físico o mental que presente el bee. Es necesario llamar a la ambulancia Multi Care – Teléfono: 55 4571 5091\nIntegrantes del grupo ‘QUEJAS Y EMERGENCIAS’ para notificaciones internas inmediatas:\n1. Dirección de operaciones o jefe directo - Responsable: Miguel Huitrón. Cel: 55 6617 4338\n2. Dirección Bee Wow - Responsable: Gisel Arellano. Cel: 55 3038 2240\n3. Área de Recursos Humanos - Responsable: Elena Urrutia. Cel: 55 3007 8219\n4. Dirección General - Responsable: José Cantú\nTiempo máximo: 10 minutos desde la recepción del reporte.`);
+              await client.sendMessage(message.from, `3. APOYO AL PERSONAL EN CAMPO\nUna vez realizada la notificación con la información, debemos facilitar ayuda al técnico.\n1. Verificar si el técnico fue trasladado por ambulancia o requiere apoyo. Responsable: Miguel Huitrón ó Gisel Arellano\n• Coordinar que otro técnico o supervisor acuda al lugar si está cerca. Responsable: Miguel Huitrón ó Gisel Arellano\n• Avisar al cliente sobre la situación, si es necesario y con discreción. Responsable: Gisel Arellano`);
               break;
-          case "reglas":
+         /* case "reglas":
               // Aquí puedes añadir la lógica que quieras para "reglas"
               await client.sendMessage(message.from, `📜 Reglas del Grupo 📜\n\n1️⃣ Respeto ante todo  \nTrata a todos los miembros con cortesía y respeto. No se toleran insultos, burlas ni lenguaje ofensivo.\n\n2️⃣ Prohibido SPAM  \n🚫 Nada de publicidad, promociones o enlaces sin permiso de los administradores.\n\n3️⃣ Temática del grupo  \n💬 Mantén los mensajes dentro del propósito del grupo. Si es un grupo de soporte, evita desviar el tema.\n\n4️⃣ Evita mensajes innecesarios  \n⚠️ No envíes cadenas, stickers en exceso o mensajes repetitivos.\n\n5️⃣ Contenido inapropiado  \n🔞 No se permite contenido ofensivo, violento, discriminatorio o sexual.\n\n6️⃣ Privacidad y seguridad  \n🔐 No compartas información personal tuya o de otros miembros.\n\n7️⃣ Respeta a los administradores  \n👮‍♂️ Las decisiones de los admins son para mantener el orden y deben ser respetadas.\n\n---\n\n🛠️ Sugerencias o dudas  \nEnvía un mensaje con el comando *contacto* para hablar con un administrador.\n\n🙌 ¡Gracias por formar parte de este grupo!`)
               break;
@@ -75,6 +77,7 @@ client.on('message', async message => {
               await client.sendMessage(message.from, `ℹ️ Información del Grupo\nEste grupo fue creado para brindar soporte, compartir novedades y resolver tus dudas.\nPor favor revisa las reglas del grupo con el comando !reglas antes de participar.\nGracias por ser parte 🙌`);
               break;
           // Puedes agregar más casos si lo necesitas
+          */
         }
     }
   }
@@ -150,7 +153,7 @@ app.post('/whatsapp/messages/', async (req, res) => {
   }
 });
 
-// QR para conectar
+// RUTA DONDE SE MANDA EL CODIGO QR A ESCANEAR
 app.get('/', (req, res) => {
   if (qrCodeData) {
     res.send(`
