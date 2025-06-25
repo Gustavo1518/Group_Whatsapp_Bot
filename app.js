@@ -42,7 +42,7 @@ client.on('message', async message => {
   if (message.from.endsWith("@g.us")) {
     const nameGroup = await message.getChat()
     console.log(nameGroup)
-    if (nameGroup.name === "Test1") {
+    if (nameGroup.name === "QUEJAS y EMERGENCIAS 🚨🚨🚨") {
       const prohibir = palabras.some(palabra => message.body.toLowerCase().trim().includes(palabra))
       if (prohibir) {
         try {
@@ -58,7 +58,7 @@ client.on('message', async message => {
         }
       }
       switch (message.body.toLowerCase().trim()) {
-          case "QUEJAS y EMERGENCIAS 🚨🚨🚨":
+          case "emergencia":
               await client.sendMessage(message.from, `1. RECEPCIÓN DE LA EMERGENCIA\nMediante el chat de ‘QUEJAS Y EMERGENCIAS’ captura la información de forma clara e inmediata.\n¿Qué debes hacer?\n1. Mantén la calma\n2. Solicita y registra los siguientes datos en este chat:\no Tipo de accidente (caída, descarga eléctrica, otro):\no Nombre del bee accidentado:\no Ubicación exacta (dirección completa y referencias):\no Estado del bee (consciente/inconsciente, signos visibles):\no Número de servicio en el que se encuentra el bee (en caso de que haya sido en el domicilio de un cliente):\no Nombre de quién te reportó la emergencia:\no Número telefónico de quién te reportó la emergencia:\no Adjunta una fotografía del accidente reportado:\n¡Gracias! En este momento concluye tu acción con el reporte. Por favor mantente al pendiente de este grupo y número telefónico por cualquier duda que surja en el seguimiento del caso.`);
               await client.sendMessage(message.from, `2. ACTIVACIÓN DEL PROTOCOLO INTERNO\nMiguel Huitrón, Gisel Arellano ó Elena Urrutia continúan con el seguimiento y protocolo interno (ÚNICOS AUTORIZADOS PARA LLEVAR A CABO EL PROCESO) y evalúan el accidente que se reporta y toman acción de los siguientes pasos:\n• Urgencia: El bee está consciente, es un daño menor y puede desplazarse a una clínica del IMSS para atención inmediata o al término de ruta. Ejemplo: Cortaduras poco profundas.\n• Emergencia: Cualquier riesgo físico o mental que presente el bee. Es necesario llamar a la ambulancia Multi Care – Teléfono: 55 4571 5091\nIntegrantes del grupo ‘QUEJAS Y EMERGENCIAS’ para notificaciones internas inmediatas:\n1. Dirección de operaciones o jefe directo - Responsable: Miguel Huitrón. Cel: 55 6617 4338\n2. Dirección Bee Wow - Responsable: Gisel Arellano. Cel: 55 3038 2240\n3. Área de Recursos Humanos - Responsable: Elena Urrutia. Cel: 55 3007 8219\n4. Dirección General - Responsable: José Cantú\nTiempo máximo: 10 minutos desde la recepción del reporte.`);
               await client.sendMessage(message.from, `3. APOYO AL PERSONAL EN CAMPO\nUna vez realizada la notificación con la información, debemos facilitar ayuda al técnico.\n1. Verificar si el técnico fue trasladado por ambulancia o requiere apoyo. Responsable: Miguel Huitrón ó Gisel Arellano\n• Coordinar que otro técnico o supervisor acuda al lugar si está cerca. Responsable: Miguel Huitrón ó Gisel Arellano\n• Avisar al cliente sobre la situación, si es necesario y con discreción. Responsable: Gisel Arellano`);
